@@ -7,7 +7,7 @@ const Card = ({ item, loading }) => {
    return (
       <div>
          {loading ? (
-            <CardSkeleton />
+            <CardSkeleton key={'Kick'} />
          ) : (
             <div className={style.card}>
                <Image width={300} height={300} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' loading='lazy' />

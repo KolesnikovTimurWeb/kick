@@ -4,6 +4,7 @@ import style from '@/styles/Product.module.scss'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToBasket, selectItems } from '@/redux/slices/cartSlice'
+import Image from 'next/image'
 const Product = () => {
    const [active, setActive] = useState(null)
    const check = useSelector((state) => state.cart.value)
@@ -13,10 +14,10 @@ const Product = () => {
    return (
       <div className={style.card}>
          <div className={style.card_images}>
-            <img src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' loading='lazy' />
-            <img src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' loading='lazy' />
-            <img src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' loading='lazy' />
-            <img src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' loading='lazy' />
+            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
+            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
+            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
+            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
          </div>
          <div className={style.card_text}>
             <h2 onClick={() => console.log(check)}>ADIDAS 4DFWD X PARLEY RUNNING SHOES</h2>
