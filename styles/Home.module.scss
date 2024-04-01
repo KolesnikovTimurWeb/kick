@@ -1,0 +1,27 @@
+.div{
+   &_title{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 50px 0;
+      h2{
+         font-size: 74px;
+         font-weight: 600;
+         text-transform: uppercase;
+         max-width: 650px;
+         line-height: 95%;
+      }
+      a{
+         padding: 20px;
+         background-color: #000;
+         color: #fff;
+         border-radius: 5px;
+      }
+
+   }
+
+   &_cards{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+   }
+}

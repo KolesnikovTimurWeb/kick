@@ -1,0 +1,25 @@
+.icons{
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   img{
+      width: 28px;
+      height: 28px;
+      padding: 5px;
+      transition: .2s ease-in-out;
+      border-radius: 20%;
+   }
+   img:hover{
+      background: #fff;
+      transition: .2s ease-in-out;
+      
+   }
+}
+.header{
+   padding: 16px 32px;
+   background: #FAFAFA;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-radius: 24px;
+}

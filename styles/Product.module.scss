@@ -1,0 +1,108 @@
+.card{
+   margin-top: 20px;
+   display: flex;
+   justify-content: space-between;
+   gap: 10px;
+
+   &_images{
+      max-width: 850px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 15px;
+      img{
+         width: 100%;
+
+      }
+   }
+   &_text{
+      width: 100%;
+
+      h2{
+         font-size: 32px;
+         font-weight: 600;
+         margin-bottom: 15px;
+      }
+      h3{
+         font-size: 24px;
+         font-weight: 600;
+      }
+   }
+   &_title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+
+      h4{
+         font-size: 16px;
+         font-weight: 600;
+         text-transform: uppercase;
+      }
+      h5{
+         font-size: 500px;
+         font-size: 14px;
+         text-decoration: underline;
+      }
+   }
+
+   &_size{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      button{
+         width: 50px;
+         height: 48px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background: #fff;
+         border-radius: 10px;
+         color: #000;
+         font-size: 15px;
+         border: 1px solid #00000094;
+         font-weight: 500;
+         transition: .2s ease-in-out;
+         &:hover{
+            background: #ececec;
+         }
+      }
+      &_active{
+         transition: .2s ease-in-out;
+
+         background: #000 !important;
+         color: #fff !important;
+      }
+
+   }
+
+   &_button{
+      width: 100%;
+      background: #000;
+      color: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 30px;
+      transition: .2s ease-in-out;
+
+      &:hover{
+         transition: .2s ease-in-out;
+         opacity: .8;
+      }
+   }
+   &_about{
+      display: flex;
+      flex-direction: column;
+
+      p{
+         font-size: 16px;
+         color: #232321;
+         margin-bottom: 20px;
+      }
+   }
+}
+

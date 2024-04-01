@@ -1,0 +1,101 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./styles/Product.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Product_card__7lDBk {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.Product_card_images__DsBIV {
+  max-width: 850px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  gap: 15px;
+}
+.Product_card_images__DsBIV img {
+  width: 100%;
+}
+.Product_card_text__rP9wo {
+  width: 100%;
+}
+.Product_card_text__rP9wo h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.Product_card_text__rP9wo h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.Product_card_title__Infzq {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+.Product_card_title__Infzq h4 {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.Product_card_title__Infzq h5 {
+  font-size: 500px;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.Product_card_size__V0UVz {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+.Product_card_size__V0UVz button {
+  width: 50px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  color: #000;
+  font-size: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.5803921569);
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+.Product_card_size__V0UVz button:hover {
+  background: #ececec;
+}
+.Product_card_size_active__AgqyH {
+  transition: 0.2s ease-in-out;
+  background: #000 !important;
+  color: #fff !important;
+}
+.Product_card_button__adcYg {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 30px;
+  transition: 0.2s ease-in-out;
+}
+.Product_card_button__adcYg:hover {
+  transition: 0.2s ease-in-out;
+  opacity: 0.8;
+}
+.Product_card_about__9Ot9A {
+  display: flex;
+  flex-direction: column;
+}
+.Product_card_about__9Ot9A p {
+  font-size: 16px;
+  color: #232321;
+  margin-bottom: 20px;
+}
