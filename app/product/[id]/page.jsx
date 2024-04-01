@@ -14,10 +14,10 @@ const Product = () => {
    return (
       <div className={style.card}>
          <div className={style.card_images}>
-            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
-            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
-            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
-            <Image width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
+            <Image key='Kick' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
+            <Image key='Kick' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
+            <Image key='Kick' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
+            <Image key='Kick' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
          </div>
          <div className={style.card_text}>
             <h2 onClick={() => console.log(check)}>ADIDAS 4DFWD X PARLEY RUNNING SHOES</h2>
@@ -27,8 +27,8 @@ const Product = () => {
                <h5>Size chart</h5>
             </div>
             <div className={style.card_size}>
-               {buttons.map((item) => (
-                  <button onClick={() => setActive(item)}
+               {buttons.map((item, index) => (
+                  <button key={index} onClick={() => setActive(item)}
                      className={`list-group-item ${active == item && style.card_size_active}`}>
                      {item}
                   </button>
