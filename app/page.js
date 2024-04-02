@@ -5,10 +5,26 @@ import style from '@/styles/Home.module.scss'
 import Card from "@/components/card";
 import CardSkeleton from "@/components/cardSkeleton";
 import { useEffect, useState } from "react";
+import axios from "axios";
 export default function Home() {
   const [loading, setLoading] = useState(true)
+  const [data, setData] = useState([])
   useEffect(() => {
+    axios.get('http://localhost:8000/shoes')
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
     setTimeout(() => setLoading(false), 1000)
+
+  }, [])
+  data.map(item => {
+    console.log(Object.keys(...item.images))
+    let keys = Object.keys(...item.images)
   })
   return (
     <div>

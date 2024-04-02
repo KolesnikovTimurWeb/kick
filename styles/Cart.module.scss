@@ -1,0 +1,113 @@
+.cart{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   justify-content: space-between;
+   margin-top: 50px;
+   &_items{
+      max-width: 750px;
+      width: 100%;
+      background: #FAFAFA;
+      border-radius: 16px;
+      padding: 24px;
+
+      h2{
+         font-size: 32px;
+         font-weight: 600;
+
+      }
+      h3{
+         color: #232321;
+         font-size: 16px;
+         font-weight: 400;
+      }
+   }
+   &_item{
+      margin-top: 20px;
+      display: flex;
+      align-items: start;
+      gap: 10px;
+
+      img{
+         max-width: 200px;
+         height: 150px;
+         object-fit: cover;
+         border-radius: 20px;
+      }
+   }
+   &_text{
+      display: flex;
+      align-items: start;
+      h4{
+         font-size: 24px;
+         color: #232321;
+
+         font-weight: 600;
+      }
+      p{
+         font-size: 16px;
+         color: #232321;
+         font-weight: 400;
+         max-width: 350px;
+      }
+      h5{
+         font-size: 24px;
+         font-weight: 600;
+      }
+   }
+
+   &_summary{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      max-width: 400px;
+      button{
+         font-size: 14px;
+         font-weight: 500;
+         padding: 16px;
+         background: #232321;
+         text-transform: uppercase;
+         border-radius: 8px;
+         transition: .2s ease-in-out;
+
+         &:hover{
+            opacity: 0.8;
+            transition: .2s ease-in-out;
+         }
+      }
+      &_total{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         h3{
+            font-size: 24px;
+            font-weight: 600;
+         }
+         p{
+            color: #232321;
+            font-size: 24px;
+            font-weight: 600;
+         }
+      }
+      &_column{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         h3{
+            font-size: 20px;
+            font-weight: 400;
+         }
+         p{
+            color: #232321;
+            font-size: 20px;
+            font-weight: 400;
+         }
+      }
+      h2{
+         font-size: 34px;
+         font-weight: 600;
+      }
+   }
+}

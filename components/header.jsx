@@ -11,7 +11,10 @@ const Header = () => {
    return (
       <div className={style.header}>
          <div className={style.logo}>
-            <Image src={logo} alt='KICKS' />
+            <Link href='/'>
+               <Image src={logo} alt='KICKS' />
+
+            </Link>
          </div>
          <div className={style.icons}>
             <Link href='/favorite'>
