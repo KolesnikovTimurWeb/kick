@@ -45,8 +45,8 @@ export default function Home() {
             )
           }
           <div className={style.div_cards}>
-            {loading === false && data.map(item => (
-              <Card item={item} />
+            {loading === false && data.map((item, index) => (
+              <Card key={index} item={item} />
             ))}
           </div>
 

@@ -54,7 +54,7 @@ const Cart = () => {
             <h2>Your Bag</h2>
             <h3>Items in your bag not reserved- check out now to make them yours.</h3>
             {data.map((item, index) =>
-               <Item item={item} index={index} />
+               <Item key={index} item={item} index={index} />
             )}
          </div>
          <div className={style.cart_summary}>
