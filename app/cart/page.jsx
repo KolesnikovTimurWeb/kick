@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import style from '@/styles/Cart.module.scss'
-import bin from '@/assets/icons/bin.svg'
+import bin from '@/assets/icons/Bin.svg'
 import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
 import { minusItem, plusItem } from '@/redux/slices/cartSlice'
