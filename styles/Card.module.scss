@@ -11,6 +11,17 @@
       font-weight: 600;
       line-height: 95%;
    }
+   h4{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 95%;
+      color: gray;
+   }
+   h5{
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 95%;
+   }
    a{
       width: 100%;
       padding: 20px;
@@ -28,4 +39,10 @@
       color: #fff;
       transition: .2s ease-in-out;
    }
+   &_text{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   
 }

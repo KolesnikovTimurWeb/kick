@@ -110,6 +110,17 @@
   font-weight: 600;
   line-height: 95%;
 }
+.Card_card__3PaD8 h4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 95%;
+  color: gray;
+}
+.Card_card__3PaD8 h5 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 95%;
+}
 .Card_card__3PaD8 a {
   width: 100%;
   padding: 20px;
@@ -125,6 +136,11 @@
   background: #000;
   color: #fff;
   transition: 0.2s ease-in-out;
+}
+.Card_card_text__8O6Z6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./styles/Home.module.scss ***!

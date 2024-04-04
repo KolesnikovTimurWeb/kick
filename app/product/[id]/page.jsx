@@ -6,77 +6,150 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToBasket, selectItems } from '@/redux/slices/cartSlice'
 import Image from 'next/image'
 import axios from 'axios'
+import { useParams } from 'next/navigation'
+import clsx from 'clsx'
+import { delay, easeIn, easeInOut, motion } from "framer-motion"
+
 const Product = () => {
+   const route = useParams()
    const [active, setActive] = useState(null)
    const [data, setData] = useState([])
    const [colors, setColors] = useState([])
-   const [color, setColor] = useState('green')
-   const check = useSelector((state) => state.cart.value)
+   const [color, setColor] = useState(null)
+   const [colorIndex, setColorIndex] = useState(0)
+   const check = useSelector((state) => state.cart.items)
    const dispatch = useDispatch()
    const [loading, setLoading] = useState(true)
-
+   const variants = {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1 },
+   }
    useEffect(() => {
-      axios.get('http://localhost:8000/shoes')
+      axios.get(`http://localhost:8000/shoes/${route.id}`)
          .then((response) => {
-            setData(response.data)
-            console.log(response.data)
-
+            setData(...response.data)
             setTimeout(() => setLoading(false), 1000)
 
          })
          .catch((error) => {
             console.log(error);
          })
-
-
    }, [])
 
-
-   let buttons = [32, 33, 34]
    return (
       <div className={style.card}>
-         <div className={style.card_images}>
-            <Image key='Kick1' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
-            <Image key='Kick2' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
-            <Image key='Kick3' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
-            <Image key='Kick4' width={1000} height={1000} src='https://i.ibb.co/XYdS4ZJ/Rectangle-5.jpg' alt='Kick' loading='lazy' />
-
-            {loading === false && data[0].images.map(item => (
-               console.log(item)
-            ))}
-         </div>
+         {loading === true && (
+            <div className={style.card_skeleton_img}>
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+            </div>
+         )}
+         {loading === false &&
+            <motion.div
+               variants={variants}
+               initial='hidden'
+               animate='visible'
+               transition={{
+                  delay: 0.1,
+                  ease: "easeInOut",
+                  duration: 0.5,
+               }}
+               className={style.card_images}>
+               {
+                  data.images[colorIndex].map((item, index) => (
+                     <Image key={index} width={1000} height={1000} src={item} alt='Kick' loading='lazy' />
+                  ))
+               }
+            </motion.div>
+         }
          <div className={style.card_text}>
-            <h2 onClick={() => console.log(data[1].images)
-            }>ADIDAS 4DFWD X PARLEY RUNNING SHOES</h2>
-            <h3>$125.00</h3>
+            <h2>{loading === true && (
+               <div className={style.card_text_skeleton}>
+               </div>
+            )}{loading === false && data.title}</h2>
+            <h3>{loading === true && (
+               <div className={style.card_text_skeleton}>
+               </div>
+            )}{loading === false && `$${data.price}`}</h3>
             <div className={style.card_title}>
                <h4>Size</h4>
                <h5>Size chart</h5>
             </div>
-            {colors}
-            <div className={style.card_size}>
-               {buttons.map((item, index) => (
-                  <button key={index} onClick={() => setActive(item)}
-                     className={`list-group-item ${active == item && style.card_size_active}`}>
-                     {item}
-                  </button>
-               ))}
 
+            {loading === true &&
+               <div className={style.card_size_skeleton}>
+               </div>
+            }
+            {loading === false &&
+               <motion.div
+                  variants={variants}
+                  initial='hidden'
+                  animate='visible'
+                  transition={{
+                     delay: 0.1,
+                     ease: "easeInOut",
+                     duration: 0.5,
+                  }} className={style.card_size}>
+                  {data.size.map((item, index) => (
+                     <button key={index} onClick={() => setActive(item)}
+                        className={`list-group-item ${active == item && style.card_size_active}`}>
+                        {item}
+                     </button>
+                  ))}
+
+               </motion.div>
+            }
+            <div onClick={() => console.log(color)} className={style.card_title}>
+               <h4>Colors</h4>
             </div>
-            <button onClick={() => dispatch(addToBasket())} className={style.card_button}>Add to cart</button>
+            {colors}
+            {loading === true && (
+               <div className={style.card_color_skeleton}>
+                  <button></button>
+                  <button></button>
+                  <button></button>
+                  <button></button>
+               </div>
+            )}
+            {loading === false &&
+               <motion.div
+                  variants={variants}
+                  initial='hidden'
+                  animate='visible'
+                  transition={{
+                     delay: 0.2,
+                     ease: "easeInOut",
+                     duration: 0.5,
+                  }} className={style.card_color}>
+
+                  {data.colors.map((item, index) => (
+                     <button key={index} onClick={() => {
+                        setColor(item),
+                           setColorIndex(index)
+                     }}
+                        style={{ backgroundColor: item, transform: color === item ? "scale(1.25)" : '' }}>
+                     </button>
+                  ))}
+               </motion.div>
+            }
+            <button onClick={() => {
+
+               dispatch(addToBasket({ ...data, ChoosedColor: color, ChoosedSize: active }))
+            }} className={active && color ? style.card_button : style.card_button_disable}>Add to cart</button>
+            <button onClick={() => console.log(check)} className={active && color ? style.card_button : style.card_button_disable}>Add to</button>
 
             <div className={style.card_about}>
                <div className={style.card_title}>
                   <h4>About the product</h4>
                </div>
-               <p>Shadow Navy / Army Green
+               <p>{data.desc}
                </p>
-               <p> This product is excluded from all promotional discounts and offers.</p>
-               <p>  Pay over time in interest-free installments with Affirm, Klarna or Afterpay.
-                  Join adiClub to get unlimited free standard shipping, returns, & exchanges.</p>
+
             </div>
          </div>
-      </div>
+      </div >
    )
 }
 

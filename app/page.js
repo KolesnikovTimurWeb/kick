@@ -12,7 +12,6 @@ export default function Home() {
   useEffect(() => {
     axios.get('http://localhost:8000/shoes')
       .then((response) => {
-        console.log(response.data);
         setData(response.data)
       })
       .catch((error) => {
@@ -36,8 +35,21 @@ export default function Home() {
           </h2>
           <Link href={'/'}>Shop New Drops</Link>
         </div>
-        <div className={style.div_cards}>
-          <Card loading={loading} />
+        <div >
+          {loading === true &&
+            (
+              <div className={style.div_cards}>
+                <CardSkeleton />
+                <CardSkeleton />
+              </div>
+            )
+          }
+          <div className={style.div_cards}>
+            {loading === false && data.map(item => (
+              <Card item={item} />
+            ))}
+          </div>
+
         </div>
 
       </div>

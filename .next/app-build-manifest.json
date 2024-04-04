@@ -6,11 +6,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/cart/page": [
+    "/product/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/cart/page.css",
-      "static/chunks/app/cart/page.js"
+      "static/css/app/product/[id]/page.css",
+      "static/chunks/app/product/[id]/page.js"
     ],
     "/page": [
       "static/chunks/webpack.js",
@@ -18,11 +18,11 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/product/[id]/page": [
+    "/cart/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/product/[id]/page.css",
-      "static/chunks/app/product/[id]/page.js"
+      "static/css/app/cart/page.css",
+      "static/chunks/app/cart/page.js"
     ]
   }
 }
