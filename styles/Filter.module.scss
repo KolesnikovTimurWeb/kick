@@ -1,0 +1,36 @@
+.filter{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   &_inputs{
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+   }
+
+
+   &_sizes{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+
+      button{
+         padding: 15px;
+         border-radius: 8px;
+         color: #000;
+         border: 1px solid #000;
+         background: none;
+      }
+   }
+   &_colors{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+      button{
+         width: 45px;
+         height: 45px;
+         border-radius: 10px;
+      }
+   }
+}

@@ -22,12 +22,11 @@ export default function Home() {
 
   }, [])
   data.map(item => {
-    console.log(Object.keys(...item.images))
     let keys = Object.keys(...item.images)
   })
   return (
     <div>
-      <MainSlider />
+      <MainSlider loading={loading} />
       <div className={style.div}>
         <div className={style.div_title}>
           <h2>
@@ -46,7 +45,7 @@ export default function Home() {
           }
           <div className={style.div_cards}>
             {loading === false && data.map((item, index) => (
-              <Card key={index} item={item} />
+              <Card key={index} index={index} item={item} />
             ))}
           </div>
 

@@ -114,6 +114,13 @@
   width: 100%;
   max-width: 400px;
 }
+.Cart_cart_summary_item__vIY5l {
+  display: flex;
+  flex-direction: column;
+}
+.Cart_cart_summary_item__vIY5l h5, .Cart_cart_summary_item__vIY5l h4 {
+  font-weight: 400;
+}
 .Cart_cart_summary__k0ebq button {
   font-size: 14px;
   font-weight: 500;

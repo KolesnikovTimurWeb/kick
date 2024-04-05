@@ -3,6 +3,15 @@
    display: flex;
    flex-direction: column;
    gap: 10px;
+   position: relative;
+   &_heart{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      img{
+         border-radius: 0 !important;
+      }
+   }
    img{
       border-radius: 10px;
    }
@@ -44,5 +53,5 @@
       align-items: center;
       justify-content: space-between;
    }
-   
+
 }

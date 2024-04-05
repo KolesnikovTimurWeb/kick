@@ -4,6 +4,13 @@
    border-radius: 30px;
    height: 700px;
    position: relative;
+   &_skeleton{
+   height: 700px;
+   width: 100%;
+   background-color: #fff;
+   animation: skeleton-loading 0.5s linear infinite alternate;
+   border-radius: 20px;
+   }
    img{
       border-radius: 30px;
       height: 100%;
@@ -41,5 +48,14 @@
          opacity: .8;
          transition: .2s ease-in-out;
       }
+   }
+}
+
+@keyframes skeleton-loading {
+   0% {
+   background-color: hsl(0, 0%, 99.5%);
+   }
+   100% {
+   background-color: hsl(0, 0%, 97.5%);
    }
 }

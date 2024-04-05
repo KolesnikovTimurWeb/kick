@@ -9,7 +9,8 @@ import axios from 'axios'
 import { useParams } from 'next/navigation'
 import clsx from 'clsx'
 import { delay, easeIn, easeInOut, motion } from "framer-motion"
-
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 const Product = () => {
    const route = useParams()
    const [active, setActive] = useState(null)
@@ -59,7 +60,7 @@ const Product = () => {
                className={style.card_images}>
                {
                   data.images[colorIndex].map((item, index) => (
-                     <Image key={index} width={1000} height={1000} src={item} alt='Kick' loading='lazy' />
+                     <LazyLoadImage effect="blur" key={index} src={item} alt='Kick' loading='lazy' />
                   ))
                }
             </motion.div>

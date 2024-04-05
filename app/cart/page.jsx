@@ -4,7 +4,8 @@ import style from '@/styles/Cart.module.scss'
 import bin from '@/assets/icons/Bin.svg'
 import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
-import { minusItem, plusItem } from '@/redux/slices/cartSlice'
+import { minusItem, plusItem, removeFromBasket } from '@/redux/slices/cartSlice'
+import { delay, easeIn, easeInOut, motion } from "framer-motion"
 
 const Item = ({ item, index }) => {
    const dispatch = useDispatch()
@@ -18,7 +19,7 @@ const Item = ({ item, index }) => {
                <span style={{ backgroundColor: item.ChoosedColor }}> </span>
                <h4>size: {item.ChoosedSize}</h4>
                <div className={style.cart_size_button}>
-                  <button onClick={() => dispatch(minusItem(index))}>-</button>
+                  <button onClick={() => item.quantity !== 1 && dispatch(minusItem(index))}>-</button>
                   <p>{item.quantity}</p>
                   <button onClick={() => dispatch(plusItem(index))}>+</button>
                </div>
@@ -27,13 +28,13 @@ const Item = ({ item, index }) => {
                <h5>${item.price}</h5>
             </div>
 
-            <div className={style.cart_close}>
+            <div onClick={() => dispatch(removeFromBasket(item))} className={style.cart_close}>
                <Image src={bin} alt='Bin' width={32} height={32} />
 
             </div>
          </div>
 
-      </div>
+      </div >
    )
 }
 
@@ -50,19 +51,43 @@ const Cart = () => {
 
    return (
       <div className={style.cart}>
-         <div className={style.cart_items}>
+         <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{
+               delay: 0.15,
+               ease: "easeInOut",
+               duration: 0.3,
+            }}
+            className={style.cart_items}>
             <h2>Your Bag</h2>
             <h3>Items in your bag not reserved- check out now to make them yours.</h3>
             {data.map((item, index) =>
                <Item key={index} item={item} index={index} />
             )}
-         </div>
-         <div className={style.cart_summary}>
+         </motion.div>
+         <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{
+               delay: 0.25,
+               ease: "easeInOut",
+               duration: 0.3,
+            }}
+            className={style.cart_summary}>
             <h2>Order Summary</h2>
-            <div className={style.cart_summary_column}>
-               <h3>1 ITEM</h3>
-               <p>$130.00</p>
-            </div>
+            {data.map((item, index) =>
+               <div className={style.cart_summary_column}>
+                  <div className={style.cart_summary_item}>
+                     <h3>{item.title}</h3>
+                     <h4>{item.ChoosedColor} | size:{item.ChoosedSize}</h4>
+                  </div>
+                  <p>${item.price}.00</p>
+               </div>
+            )}
+
             <div className={style.cart_summary_column}>
                <h3>Delivery </h3>
                <p>$6.00</p>
@@ -73,10 +98,10 @@ const Cart = () => {
             </div>
             <div className={style.cart_summary_total}>
                <h3>Total</h3>
-               <p>${total}</p>
+               <p>${total + 6}</p>
             </div>
             <button>Checkout</button>
-         </div>
+         </motion.div>
       </div>
    )
 }

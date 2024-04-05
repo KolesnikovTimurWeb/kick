@@ -13,6 +13,13 @@
   height: 700px;
   position: relative;
 }
+.MainSlider_slide_skeleton__4ZGNF {
+  height: 700px;
+  width: 100%;
+  background-color: #fff;
+  animation: MainSlider_skeleton-loading__Ni5R0 0.5s linear infinite alternate;
+  border-radius: 20px;
+}
 .MainSlider_slide__7tJFN img {
   border-radius: 30px;
   height: 100%;
@@ -50,6 +57,15 @@
 .MainSlider_slide_text__6gA6d a:hover {
   opacity: 0.8;
   transition: 0.2s ease-in-out;
+}
+
+@keyframes MainSlider_skeleton-loading__Ni5R0 {
+  0% {
+    background-color: hsl(0, 0%, 99.5%);
+  }
+  100% {
+    background-color: hsl(0, 0%, 97.5%);
+  }
 }
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./styles/CardSkeleton.module.scss ***!
@@ -101,6 +117,15 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
+}
+.Card_card_heart__HVze9 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.Card_card_heart__HVze9 img {
+  border-radius: 0 !important;
 }
 .Card_card__3PaD8 img {
   border-radius: 10px;
@@ -166,5 +191,7 @@
 }
 .Home_div_cards__MVPRP {
   display: grid;
+  grid-gap: 10px;
+  gap: 10px;
   grid-template-columns: repeat(4, 1fr);
 }
