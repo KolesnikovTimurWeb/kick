@@ -79,7 +79,7 @@ const Cart = () => {
             className={style.cart_summary}>
             <h2>Order Summary</h2>
             {data.map((item, index) =>
-               <div className={style.cart_summary_column}>
+               <div key={index} className={style.cart_summary_column}>
                   <div className={style.cart_summary_item}>
                      <h3>{item.title}</h3>
                      <h4>{item.ChoosedColor} | size:{item.ChoosedSize}</h4>
