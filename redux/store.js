@@ -5,6 +5,6 @@ import wishListSlice from "./slices/wishListSlice";
 export default configureStore({
    reducer: {
       cart: cartSlice,
-      wishList: wishListSlice
+      wishList: wishListSlice,
    }
 })

@@ -10,7 +10,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:8000/shoes')
+    axios.get('http://localhost:8000/shoesall')
       .then((response) => {
         setData(response.data)
       })
@@ -32,12 +32,16 @@ export default function Home() {
           <h2>
             Don’t miss out new drops
           </h2>
-          <Link href={'/'}>Shop New Drops</Link>
+          <Link href={'/filter'}>Shop New Drops</Link>
         </div>
         <div >
           {loading === true &&
             (
               <div className={style.div_cards}>
+                <CardSkeleton />
+                <CardSkeleton />
+                <CardSkeleton />
+                <CardSkeleton />
                 <CardSkeleton />
                 <CardSkeleton />
               </div>

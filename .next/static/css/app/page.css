@@ -14,6 +14,7 @@
   position: relative;
 }
 .MainSlider_slide_skeleton__4ZGNF {
+  margin-top: 20px;
   height: 700px;
   width: 100%;
   background-color: #fff;
@@ -67,6 +68,50 @@
     background-color: hsl(0, 0%, 97.5%);
   }
 }
+@media screen and (max-width: 1000px) {
+  .MainSlider_slide_text__6gA6d {
+    bottom: 20px;
+    left: 20px;
+  }
+  .MainSlider_slide_text__6gA6d h2 {
+    font-size: 52px;
+  }
+  .MainSlider_slide_text__6gA6d h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .MainSlider_slide__7tJFN {
+    height: 500px;
+  }
+  .MainSlider_slide_text__6gA6d {
+    bottom: 20px;
+    left: 5px;
+  }
+  .MainSlider_slide_text__6gA6d h2 {
+    font-size: 34px;
+  }
+  .MainSlider_slide_text__6gA6d h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .MainSlider_slide__7tJFN {
+    height: 450px;
+  }
+  .MainSlider_slide_text__6gA6d {
+    padding: 10px;
+    bottom: 35px;
+    left: 10px;
+  }
+  .MainSlider_slide_text__6gA6d a {
+    color: #fff;
+    background: #000;
+    padding: 12px 24px;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+  }
+}
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./styles/CardSkeleton.module.scss ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -75,7 +120,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  max-width: 300px;
+  max-width: 100%;
   width: 100%;
 }
 .CardSkeleton_skeleton_img__DMJ3P {
@@ -109,11 +154,32 @@
     background-color: hsl(0, 0%, 97.5%);
   }
 }
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./node_modules/react-lazy-load-image-component/src/effects/blur.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+.lazy-load-image-background.blur {
+  filter: blur(15px);
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+  filter: blur(0);
+  transition: filter .3s;
+}
+
+.lazy-load-image-background.blur > img {
+  opacity: 0;
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded > img {
+  opacity: 1;
+  transition: opacity .3s;
+}
+
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./styles/Card.module.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .Card_card__3PaD8 {
-  max-width: 300px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -127,7 +193,14 @@
 .Card_card_heart__HVze9 img {
   border-radius: 0 !important;
 }
-.Card_card__3PaD8 img {
+.Card_card_img__IpelG span {
+  width: 100% !important;
+}
+.Card_card_img__IpelG img {
+  max-height: 400px;
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
   border-radius: 10px;
 }
 .Card_card__3PaD8 h2 {
@@ -148,7 +221,7 @@
 }
 .Card_card__3PaD8 a {
   width: 100%;
-  padding: 20px;
+  padding: 18px;
   color: #000;
   display: flex;
   align-items: center;
@@ -191,7 +264,25 @@
 }
 .Home_div_cards__MVPRP {
   display: grid;
-  grid-gap: 10px;
-  gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media screen and (max-width: 700px) {
+  .Home_div_title__gbssp {
+    flex-direction: column;
+    align-items: start;
+  }
+  .Home_div_title__gbssp h2 {
+    font-size: 34px;
+  }
+  .Home_div_title__gbssp a {
+    margin-top: 10px;
+    padding: 14px;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+  }
 }

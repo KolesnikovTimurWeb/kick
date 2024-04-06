@@ -16,12 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className={style.container}>
-          <Header />
           <ReduxProvider>
-
+            <Header />
             {children}
+            <Footer />
           </ReduxProvider>
-          <Footer />
         </div>
       </body>
     </html>

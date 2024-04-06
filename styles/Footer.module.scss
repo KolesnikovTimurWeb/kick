@@ -47,3 +47,26 @@
       }
    }
 }
+
+
+@media screen and (max-width:1250px) {
+   .footer{
+
+   
+      &_upper{
+         flex-wrap: wrap;
+      }
+ 
+   }
+}
+
+@media screen and (max-width:650px) {
+   .footer{
+      h2{
+         font-size: 24px;
+      }
+      a,h3{
+         font-size: 16px;
+      }
+   }
+}

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import style from "@/styles/Header.module.scss"
 import Image from 'next/image'
@@ -7,7 +8,9 @@ import heart from '@/assets/icons/heart.svg'
 import cart from '@/assets/icons/cart.svg'
 import search from '@/assets/icons/search.svg'
 import Link from 'next/link'
+
 const Header = () => {
+
    return (
       <div className={style.header}>
          <div className={style.logo}>
@@ -23,10 +26,9 @@ const Header = () => {
             <Link href='/cart'>
                <Image src={cart} alt='KICKS' />
             </Link>
-            <Link href='/search'>
+            <Link href="/search">
                <Image src={search} alt='KICKS' />
             </Link>
-
          </div>
       </div>
    )

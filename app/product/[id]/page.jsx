@@ -102,7 +102,7 @@ const Product = () => {
 
                </motion.div>
             }
-            <div onClick={() => console.log(color)} className={style.card_title}>
+            <div className={style.card_title}>
                <h4>Colors</h4>
             </div>
             {colors}
@@ -139,7 +139,6 @@ const Product = () => {
 
                dispatch(addToBasket({ ...data, ChoosedColor: color, ChoosedSize: active }))
             }} className={active && color ? style.card_button : style.card_button_disable}>Add to cart</button>
-            <button onClick={() => console.log(check)} className={active && color ? style.card_button : style.card_button_disable}>Add to</button>
 
             <div className={style.card_about}>
                <div className={style.card_title}>

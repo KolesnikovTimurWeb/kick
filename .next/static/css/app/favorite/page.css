@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  max-width: 300px;
+  max-width: 100%;
   width: 100%;
 }
 .CardSkeleton_skeleton_img__DMJ3P {
@@ -40,11 +40,32 @@
     background-color: hsl(0, 0%, 97.5%);
   }
 }
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./node_modules/react-lazy-load-image-component/src/effects/blur.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+.lazy-load-image-background.blur {
+  filter: blur(15px);
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+  filter: blur(0);
+  transition: filter .3s;
+}
+
+.lazy-load-image-background.blur > img {
+  opacity: 0;
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded > img {
+  opacity: 1;
+  transition: opacity .3s;
+}
+
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./styles/Card.module.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .Card_card__3PaD8 {
-  max-width: 300px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -58,7 +79,14 @@
 .Card_card_heart__HVze9 img {
   border-radius: 0 !important;
 }
-.Card_card__3PaD8 img {
+.Card_card_img__IpelG span {
+  width: 100% !important;
+}
+.Card_card_img__IpelG img {
+  max-height: 400px;
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
   border-radius: 10px;
 }
 .Card_card__3PaD8 h2 {
@@ -79,7 +107,7 @@
 }
 .Card_card__3PaD8 a {
   width: 100%;
-  padding: 20px;
+  padding: 18px;
   color: #000;
   display: flex;
   align-items: center;
@@ -127,4 +155,20 @@
 .Favorite_favorite__9Yajq h3 {
   font-size: 16px;
   font-weight: 400;
+}
+
+@media screen and (max-width: 1550px) {
+  .Favorite_favorite_items__ozsvI {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .Favorite_favorite_items__ozsvI {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 700px) {
+  .Favorite_favorite_items__ozsvI {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

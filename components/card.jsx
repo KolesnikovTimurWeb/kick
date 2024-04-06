@@ -8,6 +8,8 @@ import heartLiked from '@/assets/icons/heart-liked.svg'
 import { delay, easeIn, easeInOut, motion } from "framer-motion"
 import { useDispatch, useSelector } from 'react-redux'
 import { addToWishList, findItemWishList } from '@/redux/slices/wishListSlice'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Card = ({ item, index }) => {
    const dispatch = useDispatch()
@@ -30,7 +32,9 @@ const Card = ({ item, index }) => {
             ease: "easeInOut",
             duration: 0.5,
          }} className={style.card}>
-         <Image key={'Kick'} width={300} height={300} src={item.mainImg} alt='Kick' loading='lazy' />
+         <div className={style.card_img}>
+            <LazyLoadImage effect='blur' key={'Kick'} width={300} height={380} src={item.mainImg} alt='Kick' loading='lazy' />
+         </div>
 
          <div className={style.card_text}>
             <div>
