@@ -10,7 +10,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:8000/shoesall')
+    axios.get('https://kick-backend.onrender.com/shoesall')
       .then((response) => {
         setData(response.data)
       })

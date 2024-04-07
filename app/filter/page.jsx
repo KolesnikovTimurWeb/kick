@@ -21,7 +21,7 @@ const Filter = () => {
    }, [])
 
    function getItemsUrl() {
-      axios.get(`http://localhost:8000/shoes?color=${color}&price=${price}&size=${size}`)
+      axios.get(`https://kick-backend.onrender.com/shoes?color=${color}&price=${price}&size=${size}`)
          .then((response) => {
             setData(response.data)
          })

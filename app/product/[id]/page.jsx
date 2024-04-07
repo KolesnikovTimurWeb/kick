@@ -26,7 +26,7 @@ const Product = () => {
       visible: { opacity: 1 },
    }
    useEffect(() => {
-      axios.get(`http://localhost:8000/shoes/${route.id}`)
+      axios.get(`https://kick-backend.onrender.com/shoes/${route.id}`)
          .then((response) => {
             setData(...response.data)
             setTimeout(() => setLoading(false), 1000)

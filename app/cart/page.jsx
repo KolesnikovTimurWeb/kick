@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
 import { minusItem, plusItem, removeFromBasket } from '@/redux/slices/cartSlice'
 import { delay, easeIn, easeInOut, motion } from "framer-motion"
+import Link from 'next/link'
 
 const Item = ({ item, index }) => {
    const dispatch = useDispatch()
@@ -98,9 +99,9 @@ const Cart = () => {
             </div>
             <div className={style.cart_summary_total}>
                <h3>Total</h3>
-               <p>${total + 6}</p>
+               <p>${data.length !== 0 ? total + 6 : 0}</p>
             </div>
-            <button>Checkout</button>
+            <Link href={'/payment'}>Checkout</Link>
          </motion.div>
       </div>
    )

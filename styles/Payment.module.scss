@@ -1,0 +1,214 @@
+.payment{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 50px;
+   &_form{
+      display: flex;
+      flex-direction: column;
+
+      &_ckeckbox_input{
+         display: flex;
+         align-items: center;
+         gap: 10px;
+
+         input[type=checkbox]{
+            padding: 0 !important;
+            margin: 0 !important;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #90A3BF;
+            border-radius: 4px;
+            accent-color:  #C70039;  
+            }
+            input[type=checkbox]:not(:disabled):checked {
+            border: 1px solid #000;
+             background-image: url('../assets/icons/Fill.svg');
+
+            }
+      }
+      h2{
+         font-size: 32px;
+         font-weight: 600;
+         margin-bottom: 10px;
+      }
+      h3{
+         font-weight: 400;
+         font-size: 16px;
+         margin-bottom: 16px;
+
+      }
+      
+      input{
+         padding: 12px 16px;
+         margin-bottom: 16px;
+
+         border: 1px solid #000;
+         border-radius: 8px;
+         background: none;
+         color: #000;
+      }
+
+      button{
+         background: #000;
+         padding: 14px;
+         color: #fff;
+         text-transform: uppercase;
+         font-size: 14px;
+         font-weight: 600;
+         border-radius: 10px;
+         margin-top: 20px;
+         transition: .2s ease-in-out;
+
+         &:hover{
+            opacity: 0.8;
+            transition: .2s ease-in-out;
+         }
+      }
+   }
+
+   &_input{
+      display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 10px;
+      input{
+         margin-top: 0;
+         width: 100%;
+         
+      }
+   }
+}
+
+.err{
+   color: red;
+   font-size: 12px;
+   margin-bottom: 5px;
+   font-weight: 400;
+}
+
+
+
+.cart{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   justify-content: space-between;
+   margin-top: 50px;
+   position: relative;
+   &_summary{
+   padding: 24px;
+      background: #FAFAFA;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      max-width: 400px;
+      &_item{
+         display: flex;
+         flex-direction: column;
+         h5,h4{
+         font-weight: 400;
+
+         }
+      }
+      button{
+         font-size: 14px;
+         font-weight: 500;
+         padding: 16px;
+         background: #232321;
+         text-transform: uppercase;
+         border-radius: 8px;
+         transition: .2s ease-in-out;
+
+         &:hover{
+            opacity: 0.8;
+            transition: .2s ease-in-out;
+         }
+      }
+      &_total{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         h3{
+            font-size: 24px;
+            font-weight: 600;
+         }
+         p{
+            color: #232321;
+            font-size: 24px;
+            font-weight: 600;
+         }
+      }
+      &_column{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         h3{
+            font-size: 20px;
+            font-weight: 400;
+         }
+         p{
+            color: #232321;
+            font-size: 20px;
+            font-weight: 400;
+         }
+      }
+      h2{
+         font-size: 34px;
+         font-weight: 600;
+      }
+   }
+
+
+
+
+}
+
+
+@media screen and (max-width:1100px) {
+   .payment{
+      flex-direction: column;
+      order: 1;
+      max-width: 100%;
+      &_form{
+      margin-top: 20px;
+
+         width: 100%;
+         max-width: 650px;
+
+      }
+
+      h2{
+         font-size: 20px;
+      }
+      h3{
+         font-size: 14px;
+      }
+      label{
+         font-size: 12px;
+      }
+   }
+   .cart{
+      h2{
+         font-size: 24px;
+      }
+      h3,p{
+         font-size: 15px;
+      }
+      flex-direction: column;
+      &_summary{
+      order: -1;
+         max-width: 650px;
+
+         &_total{
+            h3{
+               font-size: 24px;
+            }
+         }
+      }
+   }
+}

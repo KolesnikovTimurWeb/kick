@@ -13,7 +13,7 @@ const Search = () => {
    const [data, setData] = useState([])
    const [value, setValue] = useState(null)
    useEffect(() => {
-      axios.get('http://localhost:8000/shoesall')
+      axios.get('https://kick-backend.onrender.com/shoesall')
          .then((response) => {
             setData(response.data)
          })
