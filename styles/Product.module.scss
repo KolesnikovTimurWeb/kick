@@ -268,17 +268,18 @@
 
 @media screen and (max-width:800px){
    .card{
+      &_skeleton_img{
+            div{
+               height: 200px;
+            }
+      }
       &_skeleton_img,
       &_images{
          max-height: 100%;
          span{
             width: 100%;
          }
-        &_skeleton_img{
-            div{
-               height: 200px;
-            }
-         }
+    
          justify-content: center;
          img{
          max-height: 100%;
