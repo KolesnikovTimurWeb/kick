@@ -274,7 +274,11 @@
          span{
             width: 100%;
          }
-   
+        &_skeleton_img{
+            div{
+               height: 200px;
+            }
+         }
          justify-content: center;
          img{
          max-height: 100%;
