@@ -1,5 +1,7 @@
 {
-  "/not-found": "app/not-found.js",
-  "/payment/page": "app/payment/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/favorite/page": "app/favorite/page.js",
+  "/cart/page": "app/cart/page.js",
+  "/product/[id]/page": "app/product/[id]/page.js",
+  "/filter/page": "app/filter/page.js"
 }

@@ -29,6 +29,18 @@
   justify-content: space-between;
   border-radius: 24px;
 }
+
+@media screen and (max-width: 600px) {
+  .Header_header__SQD4u {
+    padding: 14px 24px;
+  }
+  .Header_icons__jOCFU {
+    padding: 4px;
+  }
+  .Header_logo__0BY1u img {
+    width: 70%;
+  }
+}
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[11].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.js","import":"Rubik","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -233,10 +245,13 @@
   }
 }
 @media screen and (max-width: 650px) {
+  .Footer_footer__x7vJd {
+    padding: 24px 24px 0 24px;
+  }
   .Footer_footer__x7vJd h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
   .Footer_footer__x7vJd a, .Footer_footer__x7vJd h3 {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

@@ -1,0 +1,193 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./styles/Payment.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Payment_payment__tj201 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.Payment_payment_form__Rqybe {
+  display: flex;
+  flex-direction: column;
+}
+.Payment_payment_form_ckeckbox_input__GE1Zz {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Payment_payment_form_ckeckbox_input__GE1Zz input[type=checkbox] {
+  padding: 0 !important;
+  margin: 0 !important;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #90A3BF;
+  border-radius: 4px;
+  accent-color: #C70039;
+}
+.Payment_payment_form_ckeckbox_input__GE1Zz input[type=checkbox]:not(:disabled):checked {
+  border: 1px solid #000;
+  background-image: url(/_next/static/media/Fill.1aac0d8e.svg);
+}
+.Payment_payment_form__Rqybe h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.Payment_payment_form__Rqybe h3 {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.Payment_payment_form__Rqybe input {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: none;
+  color: #000;
+}
+.Payment_payment_form__Rqybe button {
+  background: #000;
+  padding: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: 0.2s ease-in-out;
+}
+.Payment_payment_form__Rqybe button:hover {
+  opacity: 0.8;
+  transition: 0.2s ease-in-out;
+}
+.Payment_payment_input__KXBEO {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.Payment_payment_input__KXBEO input {
+  margin-top: 0;
+  width: 100%;
+}
+
+.Payment_err__UIMRU {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.Payment_cart___Bheg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 50px;
+  position: relative;
+}
+.Payment_cart_summary___03Wd {
+  padding: 24px;
+  background: #FAFAFA;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+.Payment_cart_summary_item__kR473 {
+  display: flex;
+  flex-direction: column;
+}
+.Payment_cart_summary_item__kR473 h5, .Payment_cart_summary_item__kR473 h4 {
+  font-weight: 400;
+}
+.Payment_cart_summary___03Wd button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px;
+  background: #232321;
+  text-transform: uppercase;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+}
+.Payment_cart_summary___03Wd button:hover {
+  opacity: 0.8;
+  transition: 0.2s ease-in-out;
+}
+.Payment_cart_summary_total__gI8Aj {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Payment_cart_summary_total__gI8Aj h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.Payment_cart_summary_total__gI8Aj p {
+  color: #232321;
+  font-size: 24px;
+  font-weight: 600;
+}
+.Payment_cart_summary_column__ipmAW {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Payment_cart_summary_column__ipmAW h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+.Payment_cart_summary_column__ipmAW p {
+  color: #232321;
+  font-size: 20px;
+  font-weight: 400;
+}
+.Payment_cart_summary___03Wd h2 {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1100px) {
+  .Payment_payment__tj201 {
+    flex-direction: column;
+    order: 1;
+    max-width: 100%;
+  }
+  .Payment_payment_form__Rqybe {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 650px;
+  }
+  .Payment_payment__tj201 h2 {
+    font-size: 20px;
+  }
+  .Payment_payment__tj201 h3 {
+    font-size: 14px;
+  }
+  .Payment_payment__tj201 label {
+    font-size: 12px;
+  }
+  .Payment_cart___Bheg {
+    flex-direction: column;
+  }
+  .Payment_cart___Bheg h2 {
+    font-size: 24px;
+  }
+  .Payment_cart___Bheg h3, .Payment_cart___Bheg p {
+    font-size: 15px;
+  }
+  .Payment_cart_summary___03Wd {
+    order: -1;
+    max-width: 650px;
+  }
+  .Payment_cart_summary_total__gI8Aj h3 {
+    font-size: 24px;
+  }
+}

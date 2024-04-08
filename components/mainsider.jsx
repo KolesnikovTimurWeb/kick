@@ -48,10 +48,18 @@ const MainSlider = ({ loading }) => {
                      </div>
                   </div>
                   <div className={style.slide}>
-                     <Image width={1000} height={1000} loading='lazy' src={'https://i.ibb.co/V2Z90f9/image-14.jpg'} alt='Kicks' />
+                     <Image width={1000} height={1000} loading='lazy' src={'https://i.ibb.co/L62YvS5/649977.jpg'} alt='Kicks' />
                      <div className={style.slide_text}>
-                        <h2>NIKE AIR MAX</h2>
-                        <h3>Nike introducing the new air max for everyone's comfort</h3>
+                        <h2>AIR JORDAN</h2>
+                        <h3>Nike introducing the new air for everyone's comfort</h3>
+                        <Link href={'/'}>Shop now</Link>
+                     </div>
+                  </div>
+                  <div className={style.slide}>
+                     <Image width={1000} height={1000} loading='lazy' src={'https://i.ibb.co/vjjRQ5q/DIqJBN7.jpg'} alt='Kicks' />
+                     <div className={style.slide_text}>
+                        <h2>NIKE SALE</h2>
+                        <h3>Brooks's Looks Gear-up for the Majors</h3>
                         <Link href={'/'}>Shop now</Link>
                      </div>
                   </div>

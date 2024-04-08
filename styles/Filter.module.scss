@@ -16,8 +16,8 @@
    &_items{
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
+      justify-content: space-evenly;
+      gap: 15px;
    }
    &_sizes{
       display: grid;
@@ -38,13 +38,15 @@
       grid-template-columns: repeat(5,1fr);
       gap: 10px;
       button{
-         transition: .2s ease-in-out;
          width: 45px;
          height: 45px;
          border-radius: 10px;
       }
    }
    &_range{
+      p{
+         font-weight: 500;
+      }
       input[type="range"]::-moz-range-track {
          background: #000;
          height: 4px;
@@ -74,13 +76,49 @@
    &_color_active{
       border: 2px solid #505050;
    }
-
+   &_button{
+      background: #000;
+      padding: 12px;
+      color: #fff;
+      border-radius: 8px;
+      margin-top: 20px;
+   }
+   h3{
+      margin: 10px 0;
+   }
 
 }
 
 @media screen and (max-width:1150px) {
    .filter{
+
+      justify-content: center;
+
+      &_colors,
+      &_sizes{
+         display: flex;
+         flex-wrap: wrap;
+      }
+   }
+}
+
+@media screen and (max-width:750px) {
+   .filter{
+      
+      &_inputs{
+         margin-bottom: 20px;
+         width: 100%;
+         max-width: 420px;
+         margin: 0 auto;
+
+      }
       flex-direction: column;
       justify-content: center;
+
+      &_colors,
+      &_sizes{
+         display: flex;
+         flex-wrap: wrap;
+      }
    }
 }

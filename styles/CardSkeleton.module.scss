@@ -10,7 +10,7 @@
       border-radius: 20PX;
       height: 330px;
       background: #fff;
-      animation: skeleton-loading 0.5s linear infinite alternate;
+      animation: skeleton-loading 0.3s linear infinite alternate;
 
    }
    &_text{
@@ -21,23 +21,23 @@
       width: 100%;
       border-radius: 5PX;
 
-      animation: skeleton-loading 0.5s linear infinite alternate;
+      animation: skeleton-loading 0.3s linear infinite alternate;
    }
    &_button{
       width: 100%;
       height: 50px;
       border-radius: 15PX;
 
-      animation: skeleton-loading 0.5s linear infinite alternate;
+      animation: skeleton-loading 0.3s linear infinite alternate;
 
    }
 }
 
 @keyframes skeleton-loading {
    0% {
-   background-color: hsl(0, 0%, 99.5%);
+   background-color: hsl(0, 0%, 98.5%);
    }
    100% {
-   background-color: hsl(0, 0%, 97.5%);
+   background-color: hsl(0, 0%, 95.5%);
    }
 }

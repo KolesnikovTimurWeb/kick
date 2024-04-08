@@ -14,7 +14,7 @@ const Filter = () => {
    const [price, setPrice] = useState(0)
 
    let sizeButtons = [38, 39, 40, 41, 42, 43, 44, 45, 46]
-   let colorButtons = ["#4A69E2", "darkblue", "black", "green", "grey", "pink", 'lightblue', "peru"]
+   let colorButtons = ["darkblue", "black", "green", "yellow", "purple", "grey", 'lightblue', "peru", "pink", "orange"]
 
    useEffect(() => {
       getItemsUrl()
@@ -39,27 +39,40 @@ const Filter = () => {
             <h3>Fize</h3>
             <div className={style.filter_sizes}>
                {sizeButtons.map((item, index) => (
-                  <button key={index} className={item === size ? style.filter_size_active : ''} onClick={() => setSize(item)} >{item}</button>
+                  <button key={index} className={item === size ? style.filter_size_active : ''} onClick={() => {
+                     if (item !== size) {
+                        setSize(item)
+                     } else {
+                        setSize(null)
+                     }
+                  }} >{item}</button>
                ))}
             </div>
             <h3>Color</h3>
             <div className={style.filter_colors}>
                {colorButtons.map((item, index) => (
-                  <button key={index} className={item === color ? style.filter_color_active : ''} onClick={() => setColor(item)} style={{ backgroundColor: item }}></button>
+                  <button key={index} className={item === color ? style.filter_color_active : ''} onClick={() => {
+                     if (item !== color) {
+                        setColor(item)
+                     } else {
+                        setColor(null)
+                     }
+                  }} style={{ backgroundColor: item }}></button>
                ))}
             </div>
             <h3>Price</h3>
             <div className={style.filter_range}>
+               <p>max: {price}$</p>
                <input onChange={e => setPrice(e.target.value)} type="range" min="0" max="200" defaultValue={0} step="10" />
             </div>
-            <button onClick={() => getItemsUrl()}>Apply Filter</button>
+            <button className={style.filter_button} onClick={() => getItemsUrl()}>Apply Filter</button>
          </div>
          <div className={style.filter_items}>
             {data.map((item, index) => (
                <Card item={item} loading={loading} key={index} />
             ))}
          </div>
-      </div>
+      </div >
    )
 }
 

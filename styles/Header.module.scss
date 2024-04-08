@@ -26,3 +26,17 @@
    justify-content: space-between;
    border-radius: 24px;
 }
+
+@media screen and (max-width: 600px) {
+   .header{
+      padding: 14px 24px;
+   }
+   .icons{
+      padding: 4px;
+   }
+   .logo{
+      img{
+         width: 70%;
+      }
+   }
+}

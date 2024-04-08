@@ -5,6 +5,7 @@
    justify-content: space-between;
    margin-top: 50px;
    position: relative;
+   min-height: 60vh;
    &_items{
       max-width: 750px;
       width: 100%;
@@ -181,8 +182,8 @@
    &_price{
       display: flex;
       flex-direction: column;
-      align-items: end;
-      justify-content: end;
+      align-items: flex-end;
+      justify-content: flex-end;
 
    }
    &_close{
@@ -204,14 +205,28 @@
 @media screen and (max-width:1050px) {
    .cart{
       flex-direction: column;
+      justify-content: center;
       &_item{
          display: flex;
          flex-direction: column;
-   
+        
       }
-
+      &_items{
+         display: flex;
+         flex-direction: column;
+         padding: 16px;
+   
+         h2{
+            font-size: 24px;
+         }
+      }
+  
       &_summary{
          max-width: 750px;
-      }
+         h2{
+            font-size: 24px;
+         }
    }
+
+}
 }
