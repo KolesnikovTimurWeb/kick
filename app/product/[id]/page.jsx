@@ -48,22 +48,25 @@ const Product = () => {
             </div>
          )}
          {loading === false &&
-            <motion.div
-               variants={variants}
-               initial='hidden'
-               animate='visible'
-               transition={{
-                  delay: 0.1,
-                  ease: "easeInOut",
-                  duration: 0.5,
-               }}
+            <div
                className={style.card_images}>
                {
                   data.images[colorIndex].map((item, index) => (
-                     <LazyLoadImage effect="blur" key={index} src={item} alt='Kick' loading='lazy' />
+                     <motion.div
+                        variants={variants}
+                        initial='hidden'
+                        animate='visible'
+                        transition={{
+                           delay: 0.15 * index,
+                           ease: "easeInOut",
+                           duration: 0.5,
+                        }} >
+                        <LazyLoadImage effect="blur" key={index} src={item} alt='Kick' loading='lazy' />
+                     </motion.div>
                   ))
                }
-            </motion.div>
+            </div>
+
          }
          <div className={style.card_text}>
             <h2>{loading === true && (
