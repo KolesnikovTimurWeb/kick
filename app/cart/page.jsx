@@ -42,67 +42,81 @@ const Item = ({ item, index }) => {
 const Cart = () => {
    const data = useSelector((state) => state.cart.items)
    const [total, setTotal] = useState(0)
+   const [loading, setLoading] = useState(true)
+
    useEffect(() => {
+
       let summary = 0
       data.map(item => {
          summary += item.price * item.quantity
       })
+      setTimeout(() => setLoading(false), 1000)
+
       setTotal(summary)
    }, [data])
 
    return (
-      <div className={style.cart}>
-         <motion.div
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{
-               delay: 0.15,
-               ease: "easeInOut",
-               duration: 0.3,
-            }}
-            className={style.cart_items}>
-            <h2>Your Bag</h2>
-            <h3>Items in your bag not reserved- check out now to make them yours.</h3>
-            {data.map((item, index) =>
-               <Item key={index} item={item} index={index} />
-            )}
-         </motion.div>
-         <motion.div
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{
-               delay: 0.25,
-               ease: "easeInOut",
-               duration: 0.3,
-            }}
-            className={style.cart_summary}>
-            <h2>Order Summary</h2>
-            {data.map((item, index) =>
-               <div key={index} className={style.cart_summary_column}>
-                  <div className={style.cart_summary_item}>
-                     <h3>{item.title}</h3>
-                     <h4>{item.ChoosedColor} | size:{item.ChoosedSize}</h4>
-                  </div>
-                  <p>${item.price}.00</p>
-               </div>
-            )}
+      <div>
+         {loading === true && (
+            <div className={style.cart}>
+            </div>
+         )}
+         {loading === false && (
+            <div className={style.cart}>
+               <motion.div
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  transition={{
+                     delay: 0.15,
+                     ease: "easeInOut",
+                     duration: 0.3,
+                  }}
+                  className={style.cart_items}>
+                  <h2>Your Bag</h2>
+                  <h3>Items in your bag not reserved- check out now to make them yours.</h3>
+                  {data.map((item, index) =>
+                     <Item key={index} item={item} index={index} />
+                  )}
+               </motion.div>
+               <motion.div
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  transition={{
+                     delay: 0.25,
+                     ease: "easeInOut",
+                     duration: 0.3,
+                  }}
+                  className={style.cart_summary}>
+                  <h2>Order Summary</h2>
+                  {data.map((item, index) =>
+                     <div key={index} className={style.cart_summary_column}>
+                        <div className={style.cart_summary_item}>
+                           <h3>{item.title}</h3>
+                           <h4>{item.ChoosedColor} | size:{item.ChoosedSize}</h4>
+                        </div>
+                        <p>${item.price}.00</p>
+                     </div>
+                  )}
 
-            <div className={style.cart_summary_column}>
-               <h3>Delivery </h3>
-               <p>$6.00</p>
+                  <div className={style.cart_summary_column}>
+                     <h3>Delivery </h3>
+                     <p>$6.00</p>
+                  </div>
+                  <div className={style.cart_summary_column}>
+                     <h3>Tax</h3>
+                     <p>$0.00</p>
+                  </div>
+                  <div className={style.cart_summary_total}>
+                     <h3>Total</h3>
+                     <p>${data.length !== 0 ? total + 6 : 0}</p>
+                  </div>
+                  <Link href={'/payment'}>Checkout</Link>
+               </motion.div>
             </div>
-            <div className={style.cart_summary_column}>
-               <h3>Tax</h3>
-               <p>$0.00</p>
-            </div>
-            <div className={style.cart_summary_total}>
-               <h3>Total</h3>
-               <p>${data.length !== 0 ? total + 6 : 0}</p>
-            </div>
-            <Link href={'/payment'}>Checkout</Link>
-         </motion.div>
+         )}
+
       </div>
    )
 }
