@@ -35,7 +35,7 @@ export default function Home() {
           <Link href={'/filter'}>Shop New Drops</Link>
         </div>
         <div >
-          {loading === true &&
+          {loading === true && data.length === 0 &&
             (
               <div className={style.div_cards}>
                 <CardSkeleton />
@@ -48,7 +48,7 @@ export default function Home() {
             )
           }
           <div className={style.div_cards}>
-            {loading === false && data.map((item, index) => (
+            {loading === false && data.length > 1 && data.map((item, index) => (
               <Card key={index} index={index} item={item} />
             ))}
           </div>
